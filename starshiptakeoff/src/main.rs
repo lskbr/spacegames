@@ -33,43 +33,18 @@ https://usborne.com/browse-books/features/computer-and-coding-books/
 190 PRINT "GOOD TAKE OFF" 
 */
 extern crate rand;
-extern crate termion;
+extern crate spacegamescommon;
 
-use std::io;
-use std::str::FromStr;
 use rand::{thread_rng, Rng};
-
-/// Loop until a valid number is read
-fn read<T>() -> T where T: FromStr{
-    let mut line = String::new();
-    loop {
-        io::stdin()
-            .read_line(&mut line)
-            .expect("failed to read from stdin");
-        let no_spaces = line.trim();
-        
-        match no_spaces.parse::<T>(){
-            Ok(v) => return v,
-            Err(_) => println!("Invalid value: {}", no_spaces)
-        }
-    }    
-}
-
-/// Clear the screen
-fn cls() {
-    println!("{}{}",
-        termion::clear::All,
-        termion::cursor::Goto(1, 1));
-}
-
+use spacegamescommon::{cls, read};
 
 fn main() {
-    let mut rng = thread_rng();    
+    let mut rng = thread_rng();
     cls();
     println!("Startship take-off");
     let g: u16 = rng.gen_range(1, 20); // Gravity
     let w: u16 = rng.gen_range(1, 40); // Weight (mass)
-    let r: u16 = g * w;  // Weight
+    let r: u16 = g * w; // Weight
     println!("Gravity {}", g);
     println!("Type in force");
     for c in 1..10 {
@@ -83,7 +58,7 @@ fn main() {
             return;
         }
         if c != 10 {
-            println!(", try again")            
+            println!(", try again")
         }
     }
     println!("\nYou failed -");

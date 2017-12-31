@@ -5,4 +5,4 @@ authors = ["nilo"]
 
 [dependencies]
 rand = "0.4.1"
-termion = "1"
+spacegamescommon = { path = "../spacegamescommon" }
