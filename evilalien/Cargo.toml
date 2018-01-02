@@ -1,0 +1,8 @@
+[package]
+name = "evilalien"
+version = "0.1.0"
+authors = ["Nilo Menezes <nilo@nilo.pro.br>"]
+
+[dependencies]
+rand = "0.4.1"
+spacegamescommon = { path = "../spacegamescommon" }
