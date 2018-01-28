@@ -1,10 +1,9 @@
 [package]
-name = "spacegamescommon"
+name = "beatthebugeyes"
 version = "0.1.0"
 authors = ["Nilo Menezes <nilo@nilo.pro.br>"]
 
 [dependencies]
 rand = "0.4.1"
 termion = "1"
-epoll = "3"
-libc = "*"
+spacegamescommon = { path = "../spacegamescommon" }
