@@ -6,7 +6,7 @@ use spacegamescommon::{cls, inkey, readbyte};
 use rand::{thread_rng, Rng};
 use std::{thread, time};
 /*
-Rust initial translation of Intergalactic Games
+Rust initial translation of Beat the Bug Eyes
 Nilo Menezes <nilo@nilo.pro.br>
 
 Isaaman Daniel, and Jenny Tyler
